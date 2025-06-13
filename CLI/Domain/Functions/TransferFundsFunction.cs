@@ -57,6 +57,10 @@ namespace GrokCLI.Domain.Functions
                     return $"Insufficient funds in source account. Available balance: ${fromAccount.Balance:F2}";
                 }
 
+                // Store the original balances before making changes
+                var previousFromBalance = fromAccount.Balance;
+                var previousToBalance = toAccount.Balance;
+
                 // Create outgoing transaction (from account)
                 var outgoingTransaction = new Transaction
                 {
@@ -78,8 +82,8 @@ namespace GrokCLI.Domain.Functions
                 };
 
                 // Calculate new balances
-                var newFromBalance = fromAccount.Balance - args.Amount;
-                var newToBalance = toAccount.Balance + args.Amount;
+                var newFromBalance = previousFromBalance - args.Amount;
+                var newToBalance = previousToBalance + args.Amount;
 
                 outgoingTransaction.BalanceAfter = newFromBalance;
                 incomingTransaction.BalanceAfter = newToBalance;
@@ -101,7 +105,7 @@ namespace GrokCLI.Domain.Functions
                             id = fromAccount.Id,
                             name = fromAccount.Name,
                             account_number = fromAccount.AccountNumber,
-                            previous_balance = fromAccount.Balance,
+                            previous_balance = previousFromBalance,
                             new_balance = newFromBalance,
                             transaction_id = addedOutgoingTransaction.Id
                         },
@@ -110,7 +114,7 @@ namespace GrokCLI.Domain.Functions
                             id = toAccount.Id,
                             name = toAccount.Name,
                             account_number = toAccount.AccountNumber,
-                            previous_balance = toAccount.Balance,
+                            previous_balance = previousToBalance,
                             new_balance = newToBalance,
                             transaction_id = addedIncomingTransaction.Id
                         },

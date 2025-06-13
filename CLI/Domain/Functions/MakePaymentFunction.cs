@@ -53,6 +53,9 @@ namespace GrokCLI.Domain.Functions
                     return $"Insufficient funds. Available balance: ${account.Balance:F2}";
                 }
 
+                // Store the original balance before making changes
+                var previousBalance = account.Balance;
+
                 // Create transaction
                 var transaction = new Transaction
                 {
@@ -64,7 +67,7 @@ namespace GrokCLI.Domain.Functions
                 };
 
                 // Update account balance
-                var newBalance = account.Balance - args.Amount;
+                var newBalance = previousBalance - args.Amount;
                 transaction.BalanceAfter = newBalance;
 
                 // Add transaction and update balance
@@ -92,7 +95,7 @@ namespace GrokCLI.Domain.Functions
                         amount = args.Amount,
                         description = transaction.Description,
                         date = addedTransaction.Date.ToString("yyyy-MM-dd HH:mm:ss"),
-                        previous_balance = account.Balance,
+                        previous_balance = previousBalance,
                         new_balance = newBalance
                     }
                 };
