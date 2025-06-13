@@ -21,7 +21,7 @@ A command-line interface for interacting with the Grok-3 model with banking func
 
 1. **Configure API Key**:
    ```bash
-   cd GrokCLI
+   cd CLI
    dotnet user-secrets init
    dotnet user-secrets set GrokApi:ApiKey <your-grok-api-key>
    ```
@@ -273,7 +273,7 @@ This plugin architecture allows for easy extension of the agent's capabilities w
 ## Project Structure
 
 ```
-GrokCLI/
+CLI/
 ├── Core/                              # Core application components
 │   ├── Abstractions/                  # Base classes and interfaces
 │   ├── Models/                        # Pure data models and DTOs
