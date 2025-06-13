@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/GrokCLI/bin/Debug/net8.0/GrokCLI.dll",
+            "program": "${workspaceFolder}/CLI/bin/Debug/net8.0/GrokCLI.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/GrokCLI",
+            "cwd": "${workspaceFolder}/CLI",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false

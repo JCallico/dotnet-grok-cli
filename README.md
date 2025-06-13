@@ -1,5 +1,7 @@
 # Grok CLI Banking Agent
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A command-line interface for interacting with the Grok-3 model with banking function calling support.
 
 ## Features
@@ -317,6 +319,12 @@ The application uses the following banking data model:
 - Account numbers are masked (e.g., ****1234)
 - No actual banking integration - purely simulated for demonstration
 - All data is local and not transmitted anywhere except to the Grok API for processing
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+The MIT License is a permissive license that allows for reuse within proprietary software provided that all copies of the licensed software include a copy of the MIT License terms and the copyright notice.
 
 ## Function Parameters
 
