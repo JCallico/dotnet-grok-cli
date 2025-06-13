@@ -320,12 +320,6 @@ The application uses the following banking data model:
 - No actual banking integration - purely simulated for demonstration
 - All data is local and not transmitted anywhere except to the Grok API for processing
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-The MIT License is a permissive license that allows for reuse within proprietary software provided that all copies of the licensed software include a copy of the MIT License terms and the copyright notice.
-
 ## Function Parameters
 
 Each banking function accepts specific parameters:
@@ -357,3 +351,9 @@ Each banking function accepts specific parameters:
 - `to_account_id` (required): Destination account ID
 - `amount` (required): Transfer amount
 - `description` (optional): Transfer description
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+The MIT License is a permissive license that allows for reuse within proprietary software provided that all copies of the licensed software include a copy of the MIT License terms and the copyright notice.
